@@ -41,9 +41,9 @@ public class getRequest {
 
             HttpEntity responseBody = response.getEntity();
 
-            EntityUtils.consume(responseBody);
+            String responseBodyText = EntityUtils.toString(responseBody);
 
-            String responseBodyText = responseBody.toString();
+            EntityUtils.consume(responseBody);
 
             return responseBodyText;
         } finally {
